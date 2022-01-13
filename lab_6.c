@@ -10,6 +10,7 @@ pthread_mutex_t mutex; //Variavel de lock e unlock
 
 //Verifica se todas athreads já contaram os valores do vetor
 void barreira(){
+    pthread_mutex_lock(&mutex); //Faz um lock para verificar as condições de barreira
     if((contador - 1) == 0){ //Caso a thread seja a última a contar os valores do vetor
             pthread_cond_broadcast(&cond); //Sendo a thread a última, libera todas as threads e retorna o contador ao seu valor inicial
             contador = nthread;
@@ -18,6 +19,7 @@ void barreira(){
             contador--; //Caso não seja a última, diminui do contador e entra em espera
             pthread_cond_wait(&cond, &mutex);
     }
+    pthread_mutex_unlock(&mutex); //Faz o unlock da thread
     return;
 }
 
@@ -36,12 +38,10 @@ void * tarefa(void * arg){
         for(int j = 0; j < nthread; j++){ //Faz o somatório dos valores do vetor
             *total += vetor[j];
         }
-        pthread_mutex_lock(&mutex); //Faz um lock para verificar as condições de barreira
         barreira(); //Chama a condição de barreira, para não modificar o vetor sem todas as threads terem o lido antes
         
         vetor[*id] = rand() % 10; //Atualiza o vetor na posição do id da thread
         barreira(); //Chama a barreira, para prosseguir após a mudança de valores do vetor de todas as posições serem feitas
-        pthread_mutex_unlock(&mutex); //Faz o unlock da thread
     }
     pthread_exit((void *) total); //Retorna o somátorio total do vetor e suas atualizações
 }
