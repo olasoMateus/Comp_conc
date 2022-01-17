@@ -3,14 +3,14 @@ class T extends Thread {
     //Identificador da thread, para auxiliar com a soma
     private int id;
     //Variável que contém guarda a soma dos elementos contados na Thread
-    private int soma;
+    private int soma[];
     //Número de Threads, necessário para ordenar as posições que serão contadas pela Thread
     private int numDeThreads; 
     //Vetor que será somado;
     private int[] vetorDeInt;
   
     //Construtor
-    public T(int tid, int soma, int numDeThreads, int vetorDeInt[]) { 
+    public T(int tid, int soma[], int numDeThreads, int vetorDeInt[]) { 
         this.id = tid; 
         this.soma = soma;
         this.numDeThreads = numDeThreads;
@@ -20,10 +20,9 @@ class T extends Thread {
     //Método main da thread
     public void run() {
         System.out.println("Thread " + this.id + " iniciou!");
-        this.soma = 0;
+        this.soma[id] = 0;
         for (int i=this.id; i< vetorDeInt.length; i = i + this.numDeThreads) {
-            this.soma = this.soma + this.vetorDeInt[i];
-            System.out.println("Fazendo -" + this.id + "-" +this.soma); 
+            this.soma[id] = this.soma[id] + this.vetorDeInt[i];
 
         }
         System.out.println("Thread " + this.id + " terminou!"); 
@@ -33,9 +32,9 @@ class T extends Thread {
 //Classe da aplicacao
 class SomaDeVetor {
     //Número de Threads
-    static final int NThreads = 2;
+    static final int NThreads = 50;
     //Tamanho do vetor
-    static final int Tam = 10;
+    static final int Tam = 5000;
 
     public static void main (String[] args) {
         //Reserva espaço para um vetor de threads
@@ -55,17 +54,17 @@ class SomaDeVetor {
             vetorDeInt[i] = 1;
         }
 
-        //cria as threads da aplicacao
+        //Cria as threads da aplicacao
         for (int i=0; i<NThreads; i++) {
-            threads[i] = new T(i, somaDeThread[i], NThreads, vetorDeInt);
+            threads[i] = new T(i, somaDeThread, NThreads, vetorDeInt);
         }
 
-        //inicia as threads
+        //Inicia as threads
         for (int i=0; i<threads.length; i++) {
             threads[i].start();
         }
 
-        //espera pelo termino de todas as threads
+        //Espera pelo termino de todas as threads
         for (int i=0; i<threads.length; i++) {
             try { 
                 threads[i].join();
