@@ -1,0 +1,247 @@
+	N_ELEM = 2^10
+	
+==============================
+Digite o número a ser buscado: 1000
+
+Tempo busca sequencial: 0.000025s
+
+Retorno adcionado!
+Tempo busca concorrente: 0.000959s
+
+Corretude sequencial avaliada sem erros
+
+Corretude concorrente avaliada sem erros
+
+Desempenho: 0.026196
+
+==============================
+
+==============================
+Digite o número a ser buscado: 1000
+
+Tempo busca sequencial: 0.000037s
+
+Retorno adcionado!
+Tempo busca concorrente: 0.000767s
+
+Corretude sequencial avaliada sem erros
+
+Corretude concorrente avaliada sem erros
+
+Desempenho: 0.048634
+
+==============================
+
+==============================
+Digite o número a ser buscado: 1000
+
+Tempo busca sequencial: 0.000014s
+
+Retorno adcionado!
+Tempo busca concorrente: 0.000252s
+
+Corretude sequencial avaliada sem erros
+
+Corretude concorrente avaliada sem erros
+
+Desempenho: 0.057249
+
+==============================
+
+==============================
+Digite o número a ser buscado: 1000
+
+Tempo busca sequencial: 0.000016s
+
+Retorno adcionado!
+Tempo busca concorrente: 0.000403s
+
+Corretude sequencial avaliada sem erros
+
+Corretude concorrente avaliada sem erros
+
+Desempenho: 0.039984
+
+==============================
+
+==============================
+Digite o número a ser buscado: 1000
+
+Tempo busca sequencial: 0.000036s
+
+Retorno adcionado!
+Tempo busca concorrente: 0.000816s
+
+Corretude sequencial avaliada sem erros
+
+Corretude concorrente avaliada sem erros
+
+Desempenho: 0.043979
+
+==============================
+
+	N_ELEM = 2^15
+	
+==============================
+Digite o número a ser buscado: 30000
+
+Tempo busca sequencial: 0.001315s
+
+Retorno adcionado!
+Tempo busca concorrente: 0.005295s
+
+Corretude sequencial avaliada sem erros
+
+Corretude concorrente avaliada sem erros
+
+Desempenho: 0.248418
+
+==============================
+
+==============================
+Digite o número a ser buscado: 30000
+
+Tempo busca sequencial: 0.001158s
+
+Retorno adcionado!
+Tempo busca concorrente: 0.005381s
+
+Corretude sequencial avaliada sem erros
+
+Corretude concorrente avaliada sem erros
+
+Desempenho: 0.215223
+
+==============================
+
+==============================
+Digite o número a ser buscado: 30000
+
+Tempo busca sequencial: 0.001323s
+
+Retorno adcionado!
+Tempo busca concorrente: 0.005277s
+
+Corretude sequencial avaliada sem erros
+
+Corretude concorrente avaliada sem erros
+
+Desempenho: 0.250722
+
+==============================
+
+==============================
+Digite o número a ser buscado: 30000
+
+Tempo busca sequencial: 0.001197s
+
+Retorno adcionado!
+Tempo busca concorrente: 0.005262s
+
+Corretude sequencial avaliada sem erros
+
+Corretude concorrente avaliada sem erros
+
+Desempenho: 0.227488
+
+==============================
+
+==============================
+Digite o número a ser buscado: 30000
+
+Tempo busca sequencial: 0.001220s
+
+Retorno adcionado!
+Tempo busca concorrente: 0.005669s
+
+Corretude sequencial avaliada sem erros
+
+Corretude concorrente avaliada sem erros
+
+Desempenho: 0.215292
+
+==============================
+
+	
+	N_ELEM = 2^17
+
+==============================
+Digite o número a ser buscado: 100000
+
+Tempo busca sequencial: 0.005302s
+
+Retorno adcionado!
+Tempo busca concorrente: 0.009412s
+
+Corretude sequencial avaliada sem erros
+
+Corretude concorrente avaliada sem erros
+
+Desempenho: 0.563259
+
+==============================
+ 
+==============================
+Digite o número a ser buscado: 100000
+
+Tempo busca sequencial: 0.004905s
+
+Retorno adcionado!
+Tempo busca concorrente: 0.004931s
+
+Corretude sequencial avaliada sem erros
+
+Corretude concorrente avaliada sem erros
+
+Desempenho: 0.994733
+
+==============================
+
+==============================
+Digite o número a ser buscado: 100000
+
+Tempo busca sequencial: 0.005232s
+
+Retorno adcionado!
+Tempo busca concorrente: 0.008666s
+
+Corretude sequencial avaliada sem erros
+
+Corretude concorrente avaliada sem erros
+
+Desempenho: 0.603718
+
+==============================
+
+==============================
+Digite o número a ser buscado: 100000
+
+Tempo busca sequencial: 0.004795s
+
+Retorno adcionado!
+Tempo busca concorrente: 0.005021s
+
+Corretude sequencial avaliada sem erros
+
+Corretude concorrente avaliada sem erros
+
+Desempenho: 0.955045
+
+==============================
+
+==============================
+Digite o número a ser buscado: 100000
+
+Tempo busca sequencial: 0.004959s
+
+Retorno adcionado!
+Tempo busca concorrente: 0.004730s
+
+Corretude sequencial avaliada sem erros
+
+Corretude concorrente avaliada sem erros
+
+Desempenho: 1.048393
+
+==============================
+
