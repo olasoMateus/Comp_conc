@@ -25,7 +25,7 @@ void * gerencia(void * arg){
         cont--; // Diminui o contador de número de elementos da fila
         if(cont != 0) sem_post(&ha_impressao); //Se ainda há elementos na fila, faz um post para imprimir novamente
         if(cont == num_thread_impres - 1) sem_post(&fila_cheia); // Se a fila não está cheia, (ou seja, há espaço para novas requisições), faz um post para requesições
-        for(int i = pos_impri + 1; i == pos_impri;i++){ //Imprime a orde de requisição das threads
+        for(int i = pos_impri + 1; i != pos_impri;i++){ //Imprime a orde de requisição das threads
             if (i % num_thread_impres == 0) i = 0;
             if(i != 0) printf("%d ", i);
         }
