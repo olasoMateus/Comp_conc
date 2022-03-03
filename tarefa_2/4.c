@@ -15,13 +15,13 @@ sem_t e; //Semáforo para uso de varáveis globais
 void * gerencia(void * arg){
     while(1){
         sem_wait(&ha_impressao); //Verifica se há impressões a serem feitas
+        sem_wait(&e); // Usa o semáforo de utilizar a variável global
         printf("Imprimiu a requisidao de %d, na posicao %d\n", vetor_impres[pos_impri], pos_impri);
         vetor_impres[pos_impri] = 0; //Consome a impressão na posição a ser imprimida
         pos_impri++; //Atualiza a posição a ser imprimida
         if (pos_impri % num_thread_impres == 0){
             pos_impri = 0;
         }
-        sem_wait(&e); // Usa o semáforo de utilizar a variável global
         cont--; // Diminui o contador de número de elementos da fila
         if(cont != 0) sem_post(&ha_impressao); //Se ainda há elementos na fila, faz um post para imprimir novamente
         if(cont == num_thread_impres - 1) sem_post(&fila_cheia); // Se a fila não está cheia, (ou seja, há espaço para novas requisições), faz um post para requesições
@@ -35,12 +35,12 @@ void * requisita(void * arg){
     int *id = (int*) arg;
     while(1){
         sem_wait(&fila_cheia); // Verifica se a fila não está cheia
+        sem_wait(&e); // Usa o semáforo de utilizar a variável global
         vetor_impres[pos_entr] = *id; // Bota, na fila, o valor de seu id, para termos um tracking da ordem
         pos_entr++; // Atualiza a posição de entrada da fila de novas requisições de impressão
         if (pos_entr % num_thread_impres == 0){
             pos_entr = 0;
         }
-        sem_wait(&e); // Usa o semáforo de utilizar a variável global
         cont++; // Aumenta o contador de número de elementos da fila
         if(cont == 1) sem_post(&ha_impressao); // Se é o primeiro a entrar na fila, manda um sinal para o gerenciador começar a imprimir
         if(cont < num_thread_impres) sem_post(&fila_cheia); // Se não é o último a entrar na fila, sinaliza que ainda há espaço para entrar na fila de impressões
