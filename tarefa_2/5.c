@@ -29,6 +29,7 @@ void * gerencia(void * arg){
             if (i % num_thread_impres == 0) i = 0;
             if(i != 0) printf("%d ", i);
         }
+        printf("\n");
         sem_post(&e); // Para de utilizar a variável global
     }
 
